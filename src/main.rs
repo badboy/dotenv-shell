@@ -7,6 +7,7 @@ extern crate libc;
 use std::{env, ptr, process};
 use std::ffi::CString;
 use libc::c_char;
+use dotenv::{dotenv, DotenvError};
 
 /// Literally taken from the libstd
 /// (sys/unix/process.rs that is)
@@ -47,7 +48,17 @@ fn main() {
     env_logger::init().expect("Setup env_logger failed");
 
     info!("Loading dotenv");
-    dotenv::dotenv().expect("Can't load dotenv");
+    match dotenv() {
+        Ok(()) => {},
+        Err(DotenvError::Io) => {
+            warn!("No dotenv file found. Skipping.");
+        },
+        Err(e) => {
+            error!("Can't initialize dotenv.");
+            error!("Error: {:?}", e);
+            process::exit(1);
+        }
+    }
 
     let shell = env::var("SHELL").unwrap_or("/bin/sh".into());
 
