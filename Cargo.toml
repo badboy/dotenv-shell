@@ -1,6 +1,6 @@
 [package]
 name = "dotenv-shell"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Jan-Erik Rediger <janerik@fnordig.de>"]
 
 keywords = ["dotenv", "shell", "launcher"]
