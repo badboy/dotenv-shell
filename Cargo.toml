@@ -11,6 +11,12 @@ license = "MIT"
 
 repository = "https://github.com/badboy/dotenv-shell"
 
+include = [
+  "README.md",
+  "LICENSE",
+	"Cargo.toml",
+	"src/**/*",
+]
 
 [dependencies]
 dotenv = "0.8.0"
