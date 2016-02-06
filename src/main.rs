@@ -39,7 +39,7 @@ fn exec(prog: &str, args: &[String]) -> ! {
     let argv = make_argv(&prog, &args);
 
     unsafe {
-        let exit_code = libc::execv(*argv, argv);
+        let exit_code = libc::execvp(*argv, argv);
         process::exit(exit_code);
     }
 }
