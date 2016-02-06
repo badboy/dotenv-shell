@@ -1,5 +1,7 @@
 # dotenv-shell
 
+[![crates.io](http://meritbadge.herokuapp.com/dotenv-shell)](https://crates.io/crates/dotenv-shell)
+
 Launch a new shell (or another program) with your loaded dotenv.
 
 This application is meant to be used on development or testing environments in which setting environment variables is not practical.
