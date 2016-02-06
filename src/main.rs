@@ -31,7 +31,8 @@ fn exec(program: &str) -> c_int {
     let argv = make_argv(&program);
 
     unsafe {
-        libc::execv(*argv, argv)
+        let exit_code = libc::execv(*argv, argv);
+        process::exit(exit_code);
     }
 }
 
