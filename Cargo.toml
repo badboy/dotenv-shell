@@ -14,8 +14,8 @@ repository = "https://github.com/badboy/dotenv-shell"
 include = [
   "README.md",
   "LICENSE",
-	"Cargo.toml",
-	"src/**/*",
+  "Cargo.toml",
+  "src/**/*",
 ]
 
 [dependencies]
